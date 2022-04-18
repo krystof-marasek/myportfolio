@@ -14,13 +14,13 @@
             <div class="navigation">
               <ul class="nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About Me</a>
+                  <a class="nav-link" href="#">About Me</a> <!-- On click scroll to AboutMeComponent -->
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">My Abilities</a>
+                  <a class="nav-link" href="#">My Abilities</a> <!-- On click scroll to ProjectsComponent -->
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Me</a>
+                  <a class="nav-link" href="#">Contact Me</a> <!-- On click scroll to ContactMeComponent -->
                 </li>
               </ul>
             </div>
