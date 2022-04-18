@@ -31,11 +31,16 @@
 
 <script>
 export default {
-  
+
 }
 </script>
 
 <style scoped lang="scss">
+
+.header {
+  position: sticky;
+  top: 0;
+}
 
 .header-row {
   display: flex;
@@ -90,10 +95,11 @@ export default {
   .logo-container {
     width: 100%;
     justify-content: center;
-
-    img {
-      object-fit: cover;
-      height: 50px;
+    .logo-box{
+      img {
+        object-fit: cover;
+        height: 75px;
+      }
     }
   }
   
@@ -102,8 +108,9 @@ export default {
     justify-content: center;
 
     .nav-link {
-      justify-content: space-evenly;
+      justify-content: center;
       padding: 8px 8px;
+      font-size: 18px;
     }
   }
 }

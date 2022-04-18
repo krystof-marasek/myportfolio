@@ -1,8 +1,8 @@
 <template>
     <div class="introduction-row row g-0">
         <div class="col-12 col-sm-6 p-0">
-            <div id="introduction-container1">
-                <div id="introduction-text">
+            <div class="introduction-container1">
+                <div class="introduction-text">
                     <h2>Hey there,</h2>
                     <h2>My name is Kryštof Marášek</h2>
                     <p>
@@ -15,8 +15,8 @@
             </div>
         </div>
         <div class="col-12 col-sm-6 p-0">
-            <div id="introduction-container2">
-                <div id="introduction-video">
+            <div class="introduction-container2">
+                <div class="introduction-video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/pi7V7JDnC2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
@@ -42,7 +42,7 @@ export default {
 
 // Introduction text
 
-#introduction-container1 {
+.introduction-container1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,7 +50,7 @@ export default {
     width: 100%;
 }
 
-#introduction-text {
+.introduction-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@ export default {
 
 // Introduction video
 
-#introduction-container2 {
+.introduction-container2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ export default {
     width: 100%;
 }
 
-#introduction-video {
+.introduction-video {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,15 +96,15 @@ export default {
 }
 
 @media (max-width: 576px) {
-    #introduction-container1 {
+    .introduction-container1 {
         height: 450px;
     }
     
-    #introduction-container2 {
+    .introduction-container2 {
         height: 300px;
     }
     
-    #introduction-video {
+    .introduction-video {
         height: 58%;
 
         iframe {

@@ -21,7 +21,7 @@ export default function getProjects() {
         },
         {
             projectID: 3,
-            projectTitle: "The Last of Us Project",
+            projectTitle: "The Last of Us Fan-made Video",
             projectDescription: "I individually created a short appreciation video about The Last of Us video games. Using this personal project, I wanted to learn more about video and audio editing in Premiere Pro.",
             projectURL: "https://youtu.be/MEja_G91BzU",
             projectVideo: "https://www.youtube.com/embed/MEja_G91BzU",
@@ -45,7 +45,7 @@ export default function getProjects() {
         },
         {
             projectID: 6,
-            projectTitle: "My First Video Game",
+            projectTitle: "My First Game",
             projectDescription: "I individually created my first video game level in Unity. I used a Karting Microgame preset offered by Unity Learn to, mainly, learn the basics of Unity and how to think about level design.",
             projectURL: "https://play.unity.com/mg/karting/karting-microgame-251",
             projectVideo: "https://www.youtube.com/embed/6TRSujoSh64",
