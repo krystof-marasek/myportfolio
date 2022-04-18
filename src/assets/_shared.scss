@@ -1,0 +1,40 @@
+$primarycolor: #1F2235;
+$secondarycolor: #23263A;
+$tertiarycolor: #FF4A57;
+$whitetextcolor: #EAEAEA;
+$greytextcolor: #ABA9AA;
+
+$videoframeheight: 327px;
+
+$pfontsize: 20px;
+$h1fontsize: 40px;
+$h1fontsize-sm: 35px;
+$h2fontsize: 33px;
+
+@mixin heading1 {
+    h1 {
+        font-size: $h1fontsize;
+        font-weight: bold;
+        color: $whitetextcolor;
+    }
+}
+
+@mixin heading2 {
+    h2 {
+        width: 70%;
+        font-weight: bold;
+        font-size: $h2fontsize;
+        color: $whitetextcolor;
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@mixin paragraph {
+    p {
+        width: 70%;
+        font-size: $pfontsize;
+        color: $greytextcolor;
+        text-align: left;
+    }
+}
