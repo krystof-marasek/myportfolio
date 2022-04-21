@@ -45,7 +45,7 @@
             <div class="col-12 p-0">
                 <div class="message">
                     <div class="message-container">
-                        <form @submit.prevent="submit" @reset="onReset">
+                        <form @submit.prevent="submit">
                             <div id="name-email-container">
                                 <div class="name-box">
                                   <input v-model="name" placeholder="Your Name" />
@@ -61,7 +61,7 @@
                               <textarea v-model="message" placeholder="Message"></textarea>
                             </div>
                             <div id="button-container">
-                                <a href="#"><button type="submit" class="btn btn-danger">Send Message</button></a>
+                                <button type="submit" class="btn btn-danger">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -74,7 +74,6 @@
 <script>
 
 export default {
-    name: "App",
     data() {
         return {
           name: "",
@@ -96,21 +95,25 @@ export default {
     },
     methods: {
         submit() {
-          if (!this.formValid) {
-            return;
-          }
-          if (!localStorage.getItem("messages")) {
-            localStorage.setItem("messages", JSON.stringify([]));
-          }
-          const messages = JSON.parse(localStorage.getItem("messages"));
-          const { name, email, subject, message } = this;
-          messages.push({
-            name,
-            email,
-            subject,
-            message,
-          });
-          localStorage.setItem("messages", JSON.stringify(messages));
+            if (!this.formValid) {
+              return;
+            }
+            if (!localStorage.getItem("messages")) {
+              localStorage.setItem("messages", JSON.stringify([]));
+            }
+            const messages = JSON.parse(localStorage.getItem("messages"));
+            const { name, email, subject, message } = this;
+            messages.push({
+              name,
+              email,
+              subject,
+              message,
+            });
+            localStorage.setItem("messages", JSON.stringify(messages));
+            this.name = "";
+            this.email = "";
+            this.subject = "";
+            this.message = "";
         },
     },
 };

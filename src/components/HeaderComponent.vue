@@ -40,7 +40,6 @@ export default {
 .header {
   position: sticky;
   top: 0;
-  animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
 }
 
 .header-row {

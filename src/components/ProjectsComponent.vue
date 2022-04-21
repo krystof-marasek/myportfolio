@@ -61,32 +61,33 @@
 
         <!-- Projects -->
         
-
-        <div v-for="project in searchedProjects" :key="project.projectID">
-            <div class="project-row row g-0">
-                <div class="col-12 col-sm-6 p-0">
-                    <div class="project-container">
-                        <div class="project-text">
-                            <h2>{{project.projectTitle}}</h2>
-                            <p>{{project.projectDescription}}</p>
-                            <div class="buttons">
-                                <button type="button" class="btn btn-outline-danger">
-                                    <a :href="project.projectURL">See More</a>
-                                </button>
+        <transition-group apper @before-enter="beforeEnter" @enter="enter">
+            <div v-for="(project, index) in searchedProjects" :data-index="index" :key="project.projectID">
+                <div class="project-row row g-0">
+                    <div class="col-12 col-sm-6 p-0">
+                        <div class="project-container">
+                            <div class="project-text">
+                                <h2>{{project.projectTitle}}</h2>
+                                <p>{{project.projectDescription}}</p>
+                                <div class="buttons">
+                                    <button type="button" class="btn btn-outline-danger">
+                                        <a :href="project.projectURL">See More</a>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 p-0">
-                    <div class="project-container">
-                        <div class="project-video">
-                            <iframe width="560" height="315" :src="project.projectVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="col-12 col-sm-6 p-0">
+                        <div class="project-container">
+                            <div class="project-video">
+                                <iframe width="560" height="315" :src="project.projectVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
                     </div>
+                    <span :class="project.projectCategory"></span>
                 </div>
-                <span :class="project.projectCategory"></span>
             </div>
-        </div>
+        </transition-group>
 
 
 
@@ -96,7 +97,7 @@
 <script>
 import { ref, computed } from 'vue'
 import getProjects from '../modules/getProjects'
-// import gsap from 'gsap'
+import gsap from 'gsap'
 
 export default {
     setup() {
@@ -123,7 +124,7 @@ export default {
           });
         });
 
-        // Filter on category (must have project category key:value to work)
+        // Filter on category
         let categoryWeb = () => {
             searchQuery.value = "web"
         }
@@ -134,21 +135,6 @@ export default {
             searchQuery.value = "game"
         }
 
-        // Transitions
-        /* const beforeEnter = (el) => {
-          el.style.opacity = 0
-          el.style.transform = 'translateX(-60px)'
-        }
-        const enter = (el, done) => {
-          gsap.to(el, {
-            opacity: 1,
-            x: 0,
-            duration: 0.8,
-            onComplete: done,
-            delay: el.dataset.project.projectID * 0.2
-          })
-        } */
-
         return {
             searchQuery,
             searchedProjects,
@@ -156,14 +142,25 @@ export default {
             categoryWeb,
             categoryVideo,
             categoryGame,
-
-            /* beforeEnter,
-            enter, */
             
             projects
         }
-    }
+    },
 
+    methods: {
+        beforeEnter(el) {
+            el.style.opacity = 0
+            el.style.transform = 'translateY(60px)'
+        },
+        enter(el) {
+            gsap.to(el, {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                delay: el.dataset.index * 0.2
+          })
+        }
+    }
 }
 </script>
 
@@ -172,13 +169,15 @@ export default {
 @include heading2;
 @include paragraph;
 
-.heading-row {
+.main-container {
     background-color: $secondarycolor;
+}
+
+.heading-row {
     padding: 40px 0 20px 0;
 }
 
 .heading-text-row {
-    background-color: $secondarycolor;
     padding: 0 0 20px 0;
 
     #heading-text-container {
@@ -194,7 +193,6 @@ export default {
 }
 
 .divider-row {
-    background-color: $secondarycolor;
     padding: 0 0 40px 0;
 
     #divider-container {
@@ -213,7 +211,6 @@ export default {
 // Filters
 
 .filter-row {
-    background-color: $secondarycolor;
     padding: 20px 0 40px 0;
 
     .filters {
@@ -256,7 +253,6 @@ export default {
 // Projects
 
 .project-row {
-    background-color: $secondarycolor;
     display: flex;
 }
 
