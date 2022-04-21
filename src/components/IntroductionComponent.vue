@@ -2,21 +2,21 @@
     <div class="introduction-row row g-0">
         <div class="col-12 col-sm-6 p-0">
             <div class="introduction-container1">
-                <div class="introduction-text">
+                <div class="introduction-text" data-aos="fade-right" data-aos-duration="1100">
                     <h2>Hey there,</h2>
                     <h2>My name is Kryštof Marášek</h2>
                     <p>
                         I am a Multimedia Designer experienced mainly in Web Design &amp; Development, Video Production and Video Game Design.
                     </p>
                     <div id="buttons">
-                        <a href="#aboutMeComponent"><button type="button" class="btn btn-outline-danger">Read More</button></a> <!-- On click scroll to AboutMeComponent -->
+                        <a href="#aboutMeComponent"><button type="button" class="btn btn-outline-danger">Read More</button></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-12 col-sm-6 p-0">
             <div class="introduction-container2">
-                <div class="introduction-video">
+                <div class="introduction-video" data-aos="fade-left" data-aos-duration="1100">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/pi7V7JDnC2w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
@@ -25,8 +25,12 @@
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 export default {
-    
+
 }
 </script>
 

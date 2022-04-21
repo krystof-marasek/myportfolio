@@ -27,7 +27,7 @@
         <div class="filter-row row g-0">
             <div class="filters">
                 <div class="col-6 col-sm-4 p-0">
-                    <div class="filter-container">
+                    <div class="filter-container" data-aos="flip-left" data-aos-duration="1100">
                         <div class="filter-btn">
                             <img type="button" @click="categoryWeb()" src="../assets/WebDesign.svg" alt="">
                         </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-sm-4 p-0">
-                    <div class="filter-container">
+                    <div class="filter-container" data-aos="flip-up" data-aos-duration="1100">
                         <div class="filter-btn">
                             <img type="button" @click="categoryVideo()" src="../assets/VideoProduction.svg" alt="">
                         </div>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-sm-4 p-0">
-                    <div class="filter-container">
+                    <div class="filter-container" data-aos="flip-right" data-aos-duration="1100">
                         <div class="filter-btn">
                             <img type="button" @click="categoryGame()" src="../assets/GameDesign.svg" alt="">
                         </div>
@@ -63,7 +63,7 @@
         
         <transition-group apper @before-enter="beforeEnter" @enter="enter">
             <div v-for="(project, index) in searchedProjects" :data-index="index" :key="project.projectID">
-                <div class="project-row row g-0">
+                <div class="project-row row g-0" data-aos="fade-up" data-aos-duration="1100">
                     <div class="col-12 col-sm-6 p-0">
                         <div class="project-container">
                             <div class="project-text">
@@ -97,7 +97,10 @@
 <script>
 import { ref, computed } from 'vue'
 import getProjects from '../modules/getProjects'
-import gsap from 'gsap'
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 export default {
     setup() {
@@ -144,21 +147,6 @@ export default {
             categoryGame,
             
             projects
-        }
-    },
-
-    methods: {
-        beforeEnter(el) {
-            el.style.opacity = 0
-            el.style.transform = 'translateY(60px)'
-        },
-        enter(el) {
-            gsap.to(el, {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay: el.dataset.index * 0.2
-          })
         }
     }
 }

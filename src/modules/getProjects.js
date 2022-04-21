@@ -13,8 +13,8 @@ export default function getProjects() {
         },
         {
             projectID: 2,
-            projectTitle: "Short Movie",
-            projectDescription: "Together with four other students, I worked on a short movie called Incursio. I wrote the script, directed the film and helped with editing.",
+            projectTitle: "Incursio - Short Movie",
+            projectDescription: "Together with four other students, I worked on a short movie called Incursio. I wrote the script, directed the film and helped with editing. WORK IN PROGRESS.",
             projectURL: "",
             projectVideo: "",
             projectCategory: "Video"

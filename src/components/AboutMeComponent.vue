@@ -5,14 +5,14 @@
         </div>
         <div class="cv-row row g-0">
             <div class="col-12 col-sm-6 p-0">
-                <div class="cv-container">
+                <div class="cv-container" data-aos="fade-up-right" data-aos-duration="1100">
                     <div class="cv">
                         <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:0636ecac-4ed9-38d0-899b-186faa8a31cb"><img src="../assets/CV-Krystof_Page_1.png" alt=""></a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 p-0">
-                <div class="cv-container">
+                <div class="cv-container" data-aos="fade-up-left" data-aos-duration="1100">
                     <div class="cv">
                         <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:0636ecac-4ed9-38d0-899b-186faa8a31cb"><img src="../assets/CV-Krystof_Page_2.png" alt=""></a>
                     </div>
@@ -23,6 +23,9 @@
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 export default {
 

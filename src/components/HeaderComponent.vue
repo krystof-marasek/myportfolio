@@ -36,12 +36,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.header {
-  position: sticky;
-  top: 0;
-}
-
 .header-row {
   display: flex;
   background-color: $primarycolor;

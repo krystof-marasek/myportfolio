@@ -6,7 +6,7 @@
         <div class="contacts-row row g-0">
             <div class="contact-me">
                 <div class="col-12 col-sm-6 p-0">
-                    <div class="contacts">
+                    <div class="contacts" data-aos="fade-right" data-aos-duration="1100">
                         <div class="contacts-container">
                             <div class="call-box">
                                 <p class="contacts-text">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="col-12 col-sm-6 p-0">
-                    <div class="contacts">
+                    <div class="contacts" data-aos="fade-left" data-aos-duration="1100">
                         <div class="contacts-container">
                             <div class="email-box">
                                 <p class="contacts-text">
@@ -44,7 +44,14 @@
         <div class="message-row row g-0">
             <div class="col-12 p-0">
                 <div class="message">
-                    <div class="message-container">
+                    <div 
+                    class="message-container" 
+                    data-aos="fade-zoom-in"
+                    data-aos-easing="ease-in-back"
+                    data-aos-delay="300"
+                    data-aos-offset="0"
+                    data-aos-duration="650"
+                    >
                         <form @submit.prevent="submit">
                             <div id="name-email-container">
                                 <div class="name-box">
@@ -72,6 +79,9 @@
 </template>
 
 <script>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 export default {
     data() {
