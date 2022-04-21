@@ -61,7 +61,7 @@
                               <textarea v-model="message" placeholder="Message"></textarea>
                             </div>
                             <div id="button-container">
-                                <button type="submit" class="btn btn-danger">Send Message</button>
+                                <a href="#"><button type="submit" class="btn btn-danger">Send Message</button></a>
                             </div>
                         </form>
                     </div>

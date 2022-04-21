@@ -4,7 +4,7 @@
           <div class="col-6 col-sm-2 p-0">
             <div class="logo-container">
               <div class="logo-box">
-                <img src="../assets/CV-logo.svg" alt="">
+                <a href="#"><img src="../assets/CV-logo.svg" alt=""></a>
               </div>
             </div>
           </div>
@@ -14,13 +14,13 @@
             <div class="navigation">
               <ul class="nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About Me</a> <!-- On click scroll to AboutMeComponent -->
+                  <a class="nav-link" href="#aboutMeComponent">About Me</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">My Abilities</a> <!-- On click scroll to ProjectsComponent -->
+                  <a class="nav-link" href="#myAbilitiesComponent">My Abilities</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Me</a> <!-- On click scroll to ContactMeComponent -->
+                  <a class="nav-link" href="#contactMeComponent">Contact Me</a>
                 </li>
               </ul>
             </div>
@@ -40,6 +40,7 @@ export default {
 .header {
   position: sticky;
   top: 0;
+  animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
 }
 
 .header-row {

@@ -1,9 +1,9 @@
 <template>
   <HeaderComponent />
   <IntroductionComponent />
-  <AboutMeComponent />
-  <ProjectsComponent />
-  <ContactMeComponent />
+  <AboutMeComponent id="aboutMeComponent"/>
+  <ProjectsComponent id="myAbilitiesComponent"/>
+  <ContactMeComponent id="contactMeComponent"/>
   <FooterComponent />
 </template>
 

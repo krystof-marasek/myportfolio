@@ -9,7 +9,7 @@
                         I am a Multimedia Designer experienced mainly in Web Design &amp; Development, Video Production and Video Game Design.
                     </p>
                     <div id="buttons">
-                        <button type="button" class="btn btn-outline-danger">Read More</button> <!-- On click scroll to AboutMeComponent -->
+                        <a href="#aboutMeComponent"><button type="button" class="btn btn-outline-danger">Read More</button></a> <!-- On click scroll to AboutMeComponent -->
                     </div>
                 </div>
             </div>
