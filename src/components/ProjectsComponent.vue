@@ -4,13 +4,13 @@
             <div class="col-12 p-0"><h1>CHOOSE AN ABILITY</h1></div>
         </div>
         <div class="heading-text-row row g-0">
-            <div class="col-sm-4 p-0"></div>
-            <div class="col-12 col-sm-4 p-0">
+            <div class="col-md-2 col-sm-4 p-0"></div>
+            <div class="col-12 col-md-8 col-sm-4 p-0">
                 <div id="heading-text-container">
                     <p id="align-center">What projects that I have worked on would you like to see?</p>
                 </div>
             </div>
-            <div class="col-sm-4 p-0"></div>
+            <div class="col-md-2 col-sm-4 p-0"></div>
         </div>
         <div class="divider-row row g-0">
             <div class="col-3 col-sm-5 p-0"></div>
@@ -27,7 +27,7 @@
         <div class="filter-row row g-0">
             <div class="filters">
                 <div class="col-6 col-sm-4 p-0">
-                    <div class="filter-container" data-aos="flip-left" data-aos-duration="1100">
+                    <div class="filter-container">
                         <div class="filter-btn">
                             <img type="button" @click="categoryWeb()" src="../assets/WebDesign.svg" alt="">
                         </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-sm-4 p-0">
-                    <div class="filter-container" data-aos="flip-up" data-aos-duration="1100">
+                    <div class="filter-container">
                         <div class="filter-btn">
                             <img type="button" @click="categoryVideo()" src="../assets/VideoProduction.svg" alt="">
                         </div>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="col-6 col-sm-4 p-0">
-                    <div class="filter-container" data-aos="flip-right" data-aos-duration="1100">
+                    <div class="filter-container">
                         <div class="filter-btn">
                             <img type="button" @click="categoryGame()" src="../assets/GameDesign.svg" alt="">
                         </div>
@@ -291,7 +291,6 @@ export default {
         border: 6px solid $tertiarycolor;
     }
 }
-
 
 
 @media (max-width: 576px) {

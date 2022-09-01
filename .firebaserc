@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "myportfolio-774e4"
-  }
+    "default": "krystof-marasek",
+    "main": "krystof-marasek"
+  },
+  "targets": {}
 }

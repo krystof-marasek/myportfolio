@@ -31,7 +31,7 @@
 
 <script>
 export default {
-
+  
 }
 </script>
 
@@ -45,7 +45,7 @@ export default {
 
 .logo-container {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 100%;
 
   .logo-box {

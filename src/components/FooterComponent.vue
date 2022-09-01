@@ -74,4 +74,17 @@ export default {
         }
     }
 }
+
+
+@media (min-width: 577px) {
+    .social-links {
+        .social-container {
+            width: 50%;
+
+            .social {
+                width: 65%;
+            }
+        }
+    }
+}
 </style>

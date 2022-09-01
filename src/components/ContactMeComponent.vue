@@ -5,24 +5,9 @@
         </div>
         <div class="contacts-row row g-0">
             <div class="contact-me">
-                <div class="col-12 col-sm-6 p-0">
-                    <div class="contacts" data-aos="fade-right" data-aos-duration="1100">
-                        <div class="contacts-container">
-                            <div class="call-box">
-                                <p class="contacts-text">
-                                    <img src="../assets/callme.svg" alt="">
-                                    Call Me
-                                </p>
-                            </div>
-                            <div class="call-box">
-                                <p class="contacts-text">+420 720 514 568</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-12 col-sm-6 p-0">
-                    <div class="contacts" data-aos="fade-left" data-aos-duration="1100">
+                <div class="col-12 col-sm-4 p-0">
+                    <div class="contacts" data-aos="zoom-in" data-aos-duration="500">
                         <div class="contacts-container">
                             <div class="email-box">
                                 <p class="contacts-text">
@@ -36,41 +21,36 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Message Me -->
+                <div class="col-12 col-sm-4 p-0">
+                    <div class="contacts" data-aos="zoom-in" data-aos-duration="500">
+                        <div class="contacts-container">
+                            <div class="message-box">
+                                <p class="contacts-text">
+                                    <img src="../assets/linkedin.svg" alt="">
+                                    <a href="https://linkedin.com/in/krystof-marasek">Message Me</a>
+                                </p>
+                            </div>
+                            <div class="message-box">
+                                <p class="contacts-text"><a href="https://linkedin.com/in/krystof-marasek">Kryštof Marášek</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="message-row row g-0">
-            <div class="col-12 p-0">
-                <div class="message">
-                    <div 
-                    class="message-container" 
-                    data-aos="fade-zoom-in"
-                    data-aos-easing="ease-in-back"
-                    data-aos-delay="300"
-                    data-aos-offset="0"
-                    data-aos-duration="650"
-                    >
-                        <form @submit.prevent="submit">
-                            <div id="name-email-container">
-                                <div class="name-box">
-                                  <input v-model="name" placeholder="Your Name" />
-                                </div>
-                                <div class="email-box">
-                                  <input v-model="email" placeholder="Your Email" />
-                                </div>
+                <div class="col-12 col-sm-4 p-0">
+                    <div class="contacts" data-aos="zoom-in" data-aos-duration="500">
+                        <div class="contacts-container">
+                            <div class="call-box">
+                                <p class="contacts-text">
+                                    <img src="../assets/callme.svg" alt="">
+                                    Call Me
+                                </p>
                             </div>
-                            <div id="subject-container">
-                              <input v-model="subject" placeholder="Subject" />
+                            <div class="call-box">
+                                <p class="contacts-text">+420 720 514 568</p>
                             </div>
-                            <div id="textarea-container">
-                              <textarea v-model="message" placeholder="Message"></textarea>
-                            </div>
-                            <div id="button-container">
-                                <button type="submit" class="btn btn-danger">Send Message</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,49 +64,7 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 export default {
-    data() {
-        return {
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        };
-    },
-    computed: {
-        formValid() {
-          const { name, email, subject, message } = this;
-          return (
-            name.length > 0 &&
-            /(.+)@(.+){2,}\.(.+){2,}/.test(email) &&
-            subject.length > 0 &&
-            message.length > 0 
-          );
-        },
-    },
-    methods: {
-        submit() {
-            if (!this.formValid) {
-              return;
-            }
-            if (!localStorage.getItem("messages")) {
-              localStorage.setItem("messages", JSON.stringify([]));
-            }
-            const messages = JSON.parse(localStorage.getItem("messages"));
-            const { name, email, subject, message } = this;
-            messages.push({
-              name,
-              email,
-              subject,
-              message,
-            });
-            localStorage.setItem("messages", JSON.stringify(messages));
-            this.name = "";
-            this.email = "";
-            this.subject = "";
-            this.message = "";
-        },
-    },
-};
+}
 </script>
 
 <style scoped lang="scss">
@@ -144,6 +82,7 @@ export default {
     display: flex;
     justify-content: center;
     background-color: $primarycolor;
+    padding-bottom: 40px;
 
     .contact-me {
         display: flex;
@@ -188,6 +127,18 @@ export default {
                         margin-right: 10px;
                     }
                 }
+
+                .message-box {
+                    display: flex;
+                    justify-content: center;
+                    width: 90%;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 10px;
+                    }
+                }
             }
         }
     }
@@ -201,134 +152,18 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-// Message Me
-
-.message-row {
-    display: flex;
-    justify-content: center;
-    background-color: $primarycolor;
-}
-
-.message {
-    background-color: $primarycolor;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-
-.message-container {
-    background-color: $primarycolor;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 88%;
-    margin: 20px 0 40px 0;
-}
-
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    #name-email-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-
-        .name-box {
-            width: 100%;
-            display: flex;
-            justify-content: start;
-
-            input {
-                width: 86%;
-                background-color: $secondarycolor;
-                color: $whitetextcolor;
-                border-radius: 10px;
-                font-size: 20px;
-                padding: 5px;
-            }
-        }
-
-        .email-box {
-            width: 100%;
-            display: flex;
-            justify-content: end;
-
-            input {
-                width: 86%;
-                background-color: $secondarycolor;
-                color: $whitetextcolor;
-                border-radius: 10px;
-                font-size: 20px;
-                padding: 5px;
-            }
-        }
-    }
-
-    #subject-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 10px;
-
-        input {
-            width: 100%;
-            background-color: $secondarycolor;
-            color: $whitetextcolor;
-            border-radius: 10px;
-            font-size: 20px;
-            padding: 5px;
-        }
-    }
-
-    #textarea-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 10px 10px 20px 10px;
-
-        textarea {
-            width: 100%;
-            background-color: $secondarycolor;
-            color: $whitetextcolor;
-            border-radius: 10px;
-            font-size: 20px;
-            padding: 5px;
-            height: 150px;
-        }
-    }
-
-    #button-container {
-        display: flex;
-        justify-content: left;
-        width: 100%;
-
-        .btn {
-            color: $whitetextcolor;
-            background: transparent;
-            border: 3px solid $tertiarycolor;
-            border-radius: 50px;
-
-            &:hover {
-                background-color: $tertiarycolor;
-            }
-        }
+    a {
+        text-decoration: none;
+        color: $whitetextcolor;
     }
 }
-
-
 
 @media (max-width: 576px) {
     h1 {
         font-size: $h1fontsize-sm;
     }
-    
+
     .contact-me {
         flex-direction: column;
         align-items: center;
@@ -346,5 +181,4 @@ form {
 
     }
 }
-
 </style>
